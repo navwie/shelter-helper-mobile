@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/filteredBlock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <!-- <Button
+             android:id="@+id/filtrationButton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:background="@drawable/ic_filtration_open" />-->
+
+
+        <TextView
+            android:id="@+id/sortingTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:text="Сортування" />
+
+        <Spinner
+            android:id="@+id/spinnerSorting"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:entries="@array/sorting" />
+
+        <TextView
+            android:id="@+id/filtrationTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="20sp"
+            android:text="Фільтрація" />
+
+        <TextView
+            android:id="@+id/speciesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:textSize="17sp"
+            android:text="Вид" />
+
+        <Spinner
+            android:id="@+id/spinnerSpecies"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="25dp"
+            android:textSize="20sp"
+            android:entries="@array/species" />
+
+        <TextView
+            android:id="@+id/sterilizedTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="15dp"
+            android:text="Стирилізація"
+            android:textSize="17sp" />
+
+        <CheckBox
+            android:id="@+id/checkBoxSterilized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:text="Стирилізована" />
+
+
+    </LinearLayout>
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.PetsFragment">
+
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
