@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,11 +30,17 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private var authToken: String? = null
+        private var shelterId: Int? = null
 
-        fun setAuthToken(value: String){
+        fun setAuthToken(value: String) {
             authToken = value
         }
         fun getAuthToken(): String? = this.authToken
+
+        fun setShelterId(value: Int) {
+            shelterId = value
+        }
+        fun getShelterId(): Int? = this.shelterId
     }
 
     fun login(view: View) {
@@ -69,6 +76,8 @@ class MainActivity : AppCompatActivity() {
                         true -> startActivity(adminIntent)
                         null -> println("ne pravilno")
                     }
+                } else {
+                    Toast.makeText(view.context, "Invalid credentials", Toast.LENGTH_SHORT).show()
                 }
             }
         })

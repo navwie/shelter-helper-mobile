@@ -72,15 +72,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     };
                 }
 
-                val homeLatLng = LatLng(49.996143532670125, 36.23116036460851)
+                val homeLatLng = LatLng(50.44751236754299, 30.517173122116105)
                 val zoomLevel = 13f
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(homeLatLng, zoomLevel))
                 mMap.setInfoWindowAdapter(CustomInfoWindowForGoogleMap(context))
 
                 mMap.setOnInfoWindowClickListener(GoogleMap.OnInfoWindowClickListener { marker ->
-                    val shelter = Intent(context, BottomNavigationActivity::class.java)
-                    shelter.putExtra("shelter", marker.tag as Shelter);
-                    startActivity(shelter)
+                    val shelterIntent = Intent(context, BottomNavigationActivity::class.java)
+                    val shelter = marker.tag as Shelter
+                    shelterIntent.putExtra("shelter", marker.tag as Shelter);
+                    //MainActivity.setShelterId(shelter.id)
+                    startActivity(shelterIntent)
                 })
 
             }

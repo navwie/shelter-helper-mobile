@@ -10,166 +10,195 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="331dp"
-        android:layout_height="384dp"
+        android:layout_width="318dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="112dp"
         android:background="@drawable/background_div"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.296" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.356" />
+
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="84dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="640dp"
+        android:layout_width="82dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="304dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.784"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_cat" />
+
+    <ImageView
+        android:id="@+id/imageViewwe"
+        android:layout_width="82dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="168dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_cat" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="82dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_cat" />
 
     <TextView
         android:id="@+id/nameText"
-        android:layout_width="255dp"
+        android:layout_width="249dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="4dp"
         android:fontFamily="@font/comfortaa"
         android:padding="5dp"
         android:paddingStart="10dp"
         android:textColor="@color/black"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.256"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.133" />
 
     <TextView
         android:id="@+id/phoneTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/registration_phone"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.497"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/phoneText"
+        app:layout_constraintHorizontal_bias="0.032"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
         android:id="@+id/phoneText"
-        android:layout_width="251dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="192dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
         android:background="@drawable/input_radius"
         android:backgroundTint="#F2D8C0"
         android:fontFamily="@font/comfortaa"
         android:padding="5dp"
+        android:textSize="14dp"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/phoneTitle" />
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
         android:id="@+id/emailTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/registration_email"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.514"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/emailText"
+        app:layout_constraintHorizontal_bias="0.27"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneTitle" />
 
     <TextView
         android:id="@+id/emailText"
-        android:layout_width="251dp"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/input_radius"
         android:backgroundTint="#F2D8C0"
         android:fontFamily="@font/comfortaa"
+        android:textSize="14dp"
         android:padding="5dp"
         android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/emailTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneText" />
 
     <TextView
         android:id="@+id/addressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/comfortaa"
         android:text="Адреса"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/addressText"
+        app:layout_constraintHorizontal_bias="0.129"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/emailText" />
+        app:layout_constraintTop_toBottomOf="@+id/emailTitle" />
 
     <TextView
         android:id="@+id/addressText"
-        android:layout_width="251dp"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/input_radius"
         android:backgroundTint="#F2D8C0"
+        android:textSize="14dp"
         android:fontFamily="@font/comfortaa"
         android:padding="5dp"
-        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/addressTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/emailText" />
 
     <TextView
         android:id="@+id/cityTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:fontFamily="@font/comfortaa"
         android:text="Місто"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/cityText"
+        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/addressText" />
+        app:layout_constraintTop_toBottomOf="@+id/addressTitle"
+        app:layout_constraintVertical_bias="0.333" />
 
     <TextView
         android:id="@+id/cityText"
-        android:layout_width="251dp"
+        android:layout_width="192dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
         android:background="@drawable/input_radius"
         android:backgroundTint="#F2D8C0"
         android:fontFamily="@font/comfortaa"
         android:padding="5dp"
+        android:textSize="14dp"
         android:paddingStart="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/cityTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/addressText"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_width="181dp"
+        android:layout_height="118dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameText"
-        app:layout_constraintVertical_bias="0.019"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
 

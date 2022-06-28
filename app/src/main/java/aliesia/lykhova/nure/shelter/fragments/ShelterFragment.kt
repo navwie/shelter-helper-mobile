@@ -11,12 +11,22 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 
+private const val SHELTER = "shelter"
 /**
  * A simple [Fragment] subclass.
  * Use the [PlaceFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ShelterFragment(val shelter: Shelter) : Fragment() {
+class ShelterFragment() : Fragment() {
+    private var shelter: Shelter? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            shelter = it.getSerializable(SHELTER) as Shelter?
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,15 +40,34 @@ class ShelterFragment(val shelter: Shelter) : Fragment() {
         val city: TextView = view.findViewById<TextView>(R.id.cityText)
         val image: ImageView = view.findViewById<ImageView>(R.id.imageView)
         Glide.with(this)
-            .load("http://192.168.1.15/storage/images/" + shelter.photo)
+            .load("http://192.168.1.15/storage/images/" + shelter?.photo)
             .into(image)
-        name.setText(shelter.name)
-        address.setText(shelter.address)
-        phone.setText(shelter.phone)
-        email.setText(shelter.email)
-        city.setText(shelter.city)
+        name.setText(shelter?.name)
+        address.setText(shelter?.address)
+        phone.setText(shelter?.phone)
+        email.setText(shelter?.email)
+        city.setText(shelter?.city)
 
         return view
+    }
+
+    companion object {
+        /**
+         * Use this factory method to create a new instance of
+         * this fragment using the provided parameters.
+         *
+         * @param param1 Parameter 1.
+         * @param param2 Parameter 2.
+         * @return A new instance of fragment BlankFragment.
+         */
+        // TODO: Rename and change types and number of parameters
+        @JvmStatic
+        fun newInstance(shelter: Shelter) =
+            ShelterFragment().apply {
+                arguments = Bundle().apply {
+                    putSerializable(SHELTER, shelter)
+                }
+            }
     }
 
 }

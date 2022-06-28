@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface GetAnimalsByShelter {
-    @GET("https://shelter-service.herokuapp.com/animals/{id}/")
+    @GET("http://192.168.1.15/api/en/animal/{id}/")
     fun getAnimalsList(@Path("id") int: Int): Call<ArrayList<Animal>>
 }
