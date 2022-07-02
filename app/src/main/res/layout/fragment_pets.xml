@@ -63,16 +63,6 @@
             android:fontFamily="@font/comfortaa"
             android:textSize="20sp" />
 
-        <CheckBox
-            android:id="@+id/checkBoxSterilized"
-            android:layout_width="239dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="80dp"
-            android:fontFamily="@font/comfortaa"
-            android:layout_marginTop="20dp"
-            android:text="@string/sterilized"
-            />
-
 
     </LinearLayout>
 

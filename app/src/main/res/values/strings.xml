@@ -61,15 +61,17 @@
     <string name="pets_main_title">Тварини</string>
     <string-array name="species">
         <item>-</item>
+        <item>Хлопчики</item>
+        <item>Дівчинки</item>
         <item>Собака</item>
         <item>Кіт</item>
+        <item>Стерилізований</item>
+        <item>Не стерилізований</item>
     </string-array>
     <string-array name="sorting">
         <item>-</item>
         <item>За ім`ям</item>
         <item>За віком</item>
-        <item>Хлопчики</item>
-        <item>Дівчинки</item>
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>

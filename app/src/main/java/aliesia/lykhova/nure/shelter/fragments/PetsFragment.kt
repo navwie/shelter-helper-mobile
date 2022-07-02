@@ -12,7 +12,9 @@ import aliesia.lykhova.nure.shelter.api.objects.GetAnimalsByShelter
 import aliesia.lykhova.nure.shelter.api.objects.Login
 import aliesia.lykhova.nure.shelter.data.shelter.Animal
 import aliesia.lykhova.nure.shelter.data.user.UserLoginResponse
+import android.widget.AdapterView
 import android.widget.ListView
+import android.widget.Spinner
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +28,9 @@ private const val SHELTER_ID = "shelterId"
  */
 class PetsFragment() : Fragment() {
     private var shelterId: Int? = null
+    private var sort: Spinner? = null
+    private var filter: Spinner? = null
+    private var rootView: View? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,21 +43,38 @@ class PetsFragment() : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =  inflater.inflate(R.layout.fragment_pets, container, false)
-        getAnimals(view, shelterId!!)
-        return view
+        rootView =  inflater.inflate(R.layout.fragment_pets, container, false)
+
+        sort = rootView?.findViewById(R.id.spinnerSorting)
+        filter = rootView?.findViewById(R.id.spinnerSpecies)
+
+        sort?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                getAnimals(rootView!!, shelterId!!)
+            }
+
+        }
+
+        filter?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                getAnimals(rootView!!, shelterId!!)
+            }
+
+        }
+
+        getAnimals(rootView!!, shelterId!!)
+        return rootView
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment BlankFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(shelterId: Int) =
             PetsFragment().apply {
@@ -78,8 +100,31 @@ class PetsFragment() : Fragment() {
                 println(response.code())
 
                 if (response.code() == HttpURLConnection.HTTP_OK) {
+                    val sortItem = sort?.selectedItem.toString()
+                    val filterItem = filter?.selectedItem.toString()
+                    var animals: ArrayList<Animal> = response.body()!!
+
+                    animals = when (sortItem) {
+                        "За ім`ям" -> { animals.sortedBy { it.name  }.toCollection(ArrayList<Animal>())}
+                        "За віком" -> { animals.sortedBy { it.birthday  }.toCollection(ArrayList<Animal>())}
+                        else -> { animals }
+                    }
+
+                    animals = when (filterItem) {
+                        "Хлопчики" -> { animals.filter{ animal -> animal.gender.equals("Хлопчик") }.toCollection(ArrayList<Animal>())}
+                        "Дівчинки" -> { animals.filter{ animal -> animal.gender.equals("Дівчинка") }.toCollection(ArrayList<Animal>())}
+                        "Собака" -> { animals.filter{ animal -> animal.type.equals("Пес") }.toCollection(ArrayList<Animal>())}
+                        "Кіт" -> { animals.filter{ animal -> animal.type.equals("Кіт") }.toCollection(ArrayList<Animal>())}
+                        "Стерилізований" -> { animals.filter{ animal -> animal.sterelized }.toCollection(ArrayList<Animal>())}
+                        "Не стерилізований" -> { animals.filter{ animal -> !animal.sterelized }.toCollection(ArrayList<Animal>())}
+                        else -> { animals }
+                    }
+
+//                    println(sortItem)
+//                    println(filterItem)
+
                     val listView = view.findViewById<ListView>(R.id.animals_list)
-                    val adapter = response.body()?.let { AnimalsListAdapter(view.context, it) }
+                    val adapter = AnimalsListAdapter(rootView!!.context, animals)
                     listView.adapter = adapter
                 }
             }
