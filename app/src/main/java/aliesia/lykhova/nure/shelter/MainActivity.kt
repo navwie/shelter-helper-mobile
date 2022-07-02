@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private var authToken: String? = null
         private var shelterId: Int? = null
+        private var userId: Int? = null
 
         fun setAuthToken(value: String) {
             authToken = value
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
             shelterId = value
         }
         fun getShelterId(): Int? = this.shelterId
+
+        fun setUserId(value: Int) {
+            userId = value
+        }
+        fun getUserId(): Int? = this.userId
     }
 
     fun login(view: View) {
@@ -51,7 +57,7 @@ class MainActivity : AppCompatActivity() {
             email.text.toString(),
             password.text.toString()
         )
-        val adminIntent = Intent(this, MapsActivity::class.java)
+        val adminIntent = Intent(this, AdminBottomNavigationActivity::class.java)
         val userIntent = Intent(this, MapsActivity::class.java)
         val apiService = Login.retrofitService
 
@@ -70,10 +76,14 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.code() == HttpURLConnection.HTTP_OK) {
                     setAuthToken("Bearer " + response.body()?.token)
+                    setUserId(response.body()?.userId!!)
 
                     when (response.body()?.role) {
                         false -> startActivity(userIntent)
-                        true -> startActivity(adminIntent)
+                        true -> {
+                            setShelterId(response.body()?.shelter_id?.id!!)
+                            startActivity(adminIntent)
+                        }
                         null -> println("ne pravilno")
                     }
                 } else {

@@ -1,6 +1,8 @@
 package aliesia.lykhova.nure.shelter.adapters
 
+import aliesia.lykhova.nure.shelter.AdminAnimalCardActivity
 import aliesia.lykhova.nure.shelter.AnimalCardActivity
+import aliesia.lykhova.nure.shelter.MainActivity.Companion.getShelterId
 import aliesia.lykhova.nure.shelter.R
 import aliesia.lykhova.nure.shelter.data.shelter.Animal
 import android.annotation.SuppressLint
@@ -72,10 +74,16 @@ class AnimalsListAdapter(
 
         //Example clicker for list item layout
         layout.setOnClickListener {
-            Toast.makeText(context, "this is toast message", Toast.LENGTH_SHORT).show()
-            val intent = Intent(context, AnimalCardActivity::class.java)
-            intent.putExtra("animal", animal)
-            context.startActivity(intent)
+            if (getShelterId() == null) {
+                val intent = Intent(context, AnimalCardActivity::class.java)
+                intent.putExtra("animal", animal)
+                context.startActivity(intent)
+            } else {
+                val intent = Intent(context, AdminAnimalCardActivity::class.java)
+                intent.putExtra("animal", animal)
+                context.startActivity(intent)
+            }
+
         }
 
         return rowView

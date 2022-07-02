@@ -221,32 +221,5 @@
             tools:ignore="MissingConstraints" />
 
 
-        <TextView
-            android:id="@+id/bookedText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/comfortaa"
-            android:visibility="invisible"
-            android:text="@string/animalIsBooked"
-            android:textColor="#F40505"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
-
-        <Button
-            android:id="@+id/bookedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/comfortaa"
-            android:onClick="register"
-            android:text="@string/book"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

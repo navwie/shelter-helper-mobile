@@ -28,36 +28,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaa"
-            android:text="Сортування:"
+            android:text="@string/sorting"
             android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/spinnerSorting"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="-25dp"
             android:background="@drawable/input_shadow"
             android:backgroundTint="#F2D8C0"
             android:entries="@array/sorting"
             android:fontFamily="@font/comfortaa"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/filtrationTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="230dp"
             android:layout_marginTop="-25dp"
-            android:layout_marginLeft="250dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Фільтрація:"
+            android:text="@string/filter"
             android:textSize="18sp" />
 
         <Spinner
             android:id="@+id/spinnerSpecies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="370dp"
+            android:layout_marginLeft="380dp"
             android:layout_marginTop="-25dp"
             android:background="@drawable/input_shadow"
             android:backgroundTint="#F2D8C0"
@@ -72,7 +72,7 @@
             android:layout_marginTop="-36dp"
             android:layout_marginLeft="470dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Стерилізована"
+            android:text="@string/sterilized"
             android:textSize="14sp" />
 
 

@@ -20,27 +20,25 @@
 
         <View
             android:id="@+id/view"
-            android:layout_width="314dp"
-            android:layout_height="447dp"
+            android:layout_width="273dp"
+            android:layout_height="286dp"
+            android:layout_marginEnd="72dp"
             android:background="@drawable/background_div"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photo"
-            app:layout_constraintVertical_bias="0.314" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.496" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="77dp"
             android:layout_height="62dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.051"
+            app:layout_constraintHorizontal_bias="0.434"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/icon_cat" />
-
 
         <ImageView
             android:id="@+id/imageView7"
@@ -69,21 +67,22 @@
             android:id="@+id/name"
             android:layout_width="90dp"
             android:layout_height="38dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:fontFamily="@font/comfortaa"
-            android:text="text"
 
+            android:text="text"
             android:textColor="#3E3434"
             android:textSize="21dp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toTopOf="@+id/view" />
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.311"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/typeText"
-            android:layout_width="60dp"
-            android:layout_height="35dp"
+            android:layout_width="61dp"
+            android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/comfortaa"
@@ -97,8 +96,8 @@
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/comfortaa"
             android:text="Пес"
             android:textColor="#3E3434"
@@ -109,45 +108,47 @@
             android:id="@+id/gender"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="104dp"
             android:fontFamily="@font/comfortaa"
             android:text="Чол"
             android:textColor="#3E3434"
-            app:layout_constraintStart_toEndOf="@+id/genderText"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view" />
 
         <TextView
             android:id="@+id/genderText"
-            android:layout_width="62dp"
-            android:layout_height="36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/comfortaa"
             android:text="@string/sex"
             android:textColor="#3E3434"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gender"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/name" />
+            app:layout_constraintTop_toTopOf="@+id/view" />
 
         <TextView
             android:id="@+id/description"
-            android:layout_width="265dp"
-            android:layout_height="62dp"
+            android:layout_width="254dp"
+            android:layout_height="61dp"
             android:fontFamily="@font/comfortaa"
             android:text="@string/description"
             android:textColor="#3E3434"
             app:layout_constraintBottom_toBottomOf="@+id/view"
             app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintHorizontal_bias="0.368"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/sterelized"
-            app:layout_constraintVertical_bias="0.375" />
+            app:layout_constraintVertical_bias="0.406" />
 
         <TextView
             android:id="@+id/weighText"
             android:layout_width="66dp"
-            android:layout_height="36dp"
+            android:layout_height="23dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/comfortaa"
@@ -161,12 +162,12 @@
             android:id="@+id/weight"
             android:layout_width="60dp"
             android:layout_height="24dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/comfortaa"
             android:text="4кг"
             android:textColor="#3E3434"
             app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintHorizontal_bias="0.121"
             app:layout_constraintStart_toEndOf="@+id/weighText"
             app:layout_constraintTop_toBottomOf="@+id/type" />
 
@@ -175,7 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/comfortaa"
             android:text="@string/birthday"
             android:textColor="#3E3434"
@@ -183,16 +184,17 @@
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/weighText" />
 
+
         <TextView
             android:id="@+id/birthday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/comfortaa"
             android:text="content"
             android:textColor="#3E3434"
             app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.153"
+            app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toEndOf="@+id/birthdayText"
             app:layout_constraintTop_toBottomOf="@+id/weight" />
 
@@ -200,52 +202,56 @@
             android:id="@+id/sterelized"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:fontFamily="@font/comfortaa"
             android:text="Стерілозван"
             android:textColor="#F40505"
             app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="@+id/view"
             app:layout_constraintTop_toBottomOf="@+id/birthdayText" />
-
 
         <ImageView
             android:id="@+id/photo"
             android:layout_width="205dp"
             android:layout_height="112dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.212"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
             tools:ignore="MissingConstraints" />
-
 
         <TextView
             android:id="@+id/bookedText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaa"
-            android:visibility="invisible"
-            android:text="@string/animalIsBooked"
+            android:text="Тварина вже заброньована"
             android:textColor="#F40505"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.216"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photo"
+            app:layout_constraintVertical_bias="0.198" />
 
         <Button
             android:id="@+id/bookedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
             android:fontFamily="@font/comfortaa"
             android:onClick="register"
-            android:text="@string/book"
+            android:text="Забронювати"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/description" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
+            app:layout_constraintHorizontal_bias="0.269"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photo"
+            app:layout_constraintVertical_bias="0.035" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

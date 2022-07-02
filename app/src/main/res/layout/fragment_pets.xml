@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:fontFamily="@font/comfortaa"
             android:layout_height="wrap_content"
-            android:text="Сортування:"
+            android:text="@string/sorting"
             android:textSize="20sp" />
 
         <Spinner
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Фільтрація:"
+            android:text="@string/filter"
             android:textSize="20sp" />
 
         <Spinner
@@ -70,7 +70,8 @@
             android:layout_marginLeft="80dp"
             android:fontFamily="@font/comfortaa"
             android:layout_marginTop="20dp"
-            android:text="Стирилізована" />
+            android:text="@string/sterilized"
+            />
 
 
     </LinearLayout>
